@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+notebook = "*"
+python-dotenv = "*"
+rpy2 = "*"
+requests = "*"
+safegraphql = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
