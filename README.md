@@ -17,8 +17,8 @@ $ pip install --user --upgrade pipenv
 
 ##### Clone project and install dependencies
 ```
-$ git clone git@github.com:bootstrapt/safegraph-practice-problem.git
-$ cd safegraph-practice-problem
+$ git clone git@github.com:bootstrapt/safegraph-practice-problems.git
+$ cd safegraph-practice-problems
 $ pipenv install
 $ pipenv shell
 ```
