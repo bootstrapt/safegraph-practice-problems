@@ -14080,13 +14080,13 @@ a.anchor-link {
 </ol>
 </li>
 </ol>
-<p>But then decided to just implement a basic call myself. I tried the query used in the cURL version of the directions, but something about the JSON encoding wasn't working correctly. I saw that the query in the cURL example looked like a serialized version of the GraphQL query, so I tried using the GraphQL query as a multiline string while using Python's standard json library to convert. Success! I also implemented it using the provided Python client library. And I implemented it in R. None of the responses were exactly the same, but the data itself matched in all three cases!</p>
+<p>But then decided to just implement a basic call myself. I tried the query used in the cURL version of the directions, but something about the JSON encoding wasn't working correctly. I saw that the query in the cURL example looked like a serialized version of the GraphQL query, so I tried using the GraphQL query as a multiline string while using Python's standard json library to convert (see <a href="#Figure-1A:-Basic-SafeGraph-API-request-in-Python">FIG 1A</a>). Success! I also implemented it using the provided Python client library  (see <a href="#Figure-1B:-Basic-SafeGraph-API-request-using-official-Python-client-library">FIG 1B</a>). And I implemented it in R (see <a href="#Figure-1C:-Basic-SafeGraph-API-request-in-R">FIG 1C</a>). None of the responses were exactly the same, but the data itself matched in all three cases!</p>
 <p>Given what I know, I would still want the answers to the above questions, but now I would err towards having a more complete solution in one of the given languages. Authorization isn't too hard so if we can't get a client libary out in time, we should be able to produce docs with common use cases for the other language. I have never used R before and figured out a basic API call in less than an hour.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Figure-1A:-Basic-SafeGraph-API-request-in-Python">Figure 1A: Basic SafeGraph API request in Python<a class="anchor-link" href="#Figure-1A:-Basic-SafeGraph-API-request-in-Python">&#182;</a></h3><p>Based on the <code>cURL</code> version of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>. It uses Python to encode the query string. Authorization handled with a simple header.</p>
+<h4 id="Figure-1A:-Basic-SafeGraph-API-request-in-Python">Figure 1A: Basic SafeGraph API request in Python<a class="anchor-link" href="#Figure-1A:-Basic-SafeGraph-API-request-in-Python">&#182;</a></h4><p>Based on the <code>cURL</code> version of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>. It uses Python to encode the query string. Authorization handled with a simple header.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
@@ -14151,7 +14151,7 @@ a.anchor-link {
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Figure-1B:-Basic-SafeGraph-API-request-using-official-Python-client-library">Figure 1B: Basic SafeGraph API request using official Python client library<a class="anchor-link" href="#Figure-1B:-Basic-SafeGraph-API-request-using-official-Python-client-library">&#182;</a></h3><p>Based on the <code>python</code> version of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>.</p>
+<h4 id="Figure-1B:-Basic-SafeGraph-API-request-using-official-Python-client-library">Figure 1B: Basic SafeGraph API request using official Python client library<a class="anchor-link" href="#Figure-1B:-Basic-SafeGraph-API-request-using-official-Python-client-library">&#182;</a></h4><p>Based on the <code>python</code> version of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
@@ -14204,7 +14204,7 @@ a.anchor-link {
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Figure-1C:-Basic-SafeGraph-API-request-in-R">Figure 1C: Basic SafeGraph API request in R<a class="anchor-link" href="#Figure-1C:-Basic-SafeGraph-API-request-in-R">&#182;</a></h3><p>Based on the <code>python</code> and <code>cURL</code> versions of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>. Since the payload encoded and serialized by Python already works, I just pass that in along with my API key. I then use R's <code>httr</code> package to form a valid request</p>
+<h4 id="Figure-1C:-Basic-SafeGraph-API-request-in-R">Figure 1C: Basic SafeGraph API request in R<a class="anchor-link" href="#Figure-1C:-Basic-SafeGraph-API-request-in-R">&#182;</a></h4><p>Based on the <code>python</code> and <code>cURL</code> versions of the <a href="https://docs.safegraph.com/reference#lookup-placekey">docs</a>. Since the payload encoded and serialized by Python already works, I just pass that in along with my API key. I then use R's <code>httr</code> package to form a valid request</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
@@ -14237,7 +14237,24 @@ a.anchor-link {
   .. .. .. .. ..$ brand_name: chr &#34;starbucks coffee&#34;
   .. .. ..$ top_category         : chr &#34;Restaurants and Other Eating Places&#34;
   .. .. ..$ sub_category         : chr &#34;Snack and Nonalcoholic Beverage Bars&#34;
-  .. .. ..$ naics_code           :</pre>
+  .. .. ..$ naics_code           : int 722515
+  .. .. ..$ phone_number         : NULL
+  .. .. ..$ open_hours           : chr &#34;{ \&#34;Mon\&#34;: [[\&#34;5:30\&#34;, \&#34;19:30\&#34;]], \&#34;Tue\&#34;: [[\&#34;5:30\&#34;, \&#34;19:30\&#34;]], \&#34;Wed\&#34;: [[\&#34;5:30\&#34;, \&#34;19:30\&#34;]], \&#34;Thu\&#34;&#34;| __truncated__
+  .. .. ..$ category_tags        :List of 6
+  .. .. .. ..$ : chr &#34;Snacks&#34;
+  .. .. .. ..$ : chr &#34;Counter Service&#34;
+  .. .. .. ..$ : chr &#34;Dessert&#34;
+  .. .. .. ..$ : chr &#34;Tea House&#34;
+  .. .. .. ..$ : chr &#34;Coffee Shop&#34;
+  .. .. .. ..$ : chr &#34;Bakery&#34;
+  .. .. ..$ opened_on            : NULL
+  .. .. ..$ closed_on            : NULL
+  .. .. ..$ tracking_closed_since: chr &#34;2019-07-01&#34;
+  .. .. ..$ geometry_type        : chr &#34;POLYGON&#34;
+ $ extensions:List of 2
+  ..$ row_count   : int 1
+  ..$ version_date: chr &#34;1630442778__2021_08&#34;
+</pre>
 </div>
 </div>
 
@@ -14298,7 +14315,23 @@ You notice that there is both a “safegraph_brand_ids” field and a “brands�
 <h4 id="Figure-3A:-As-written">Figure 3A: As written<a class="anchor-link" href="#Figure-3A:-As-written">&#182;</a></h4><p>As written, the snippet doesn't work. The payload line was truncated in the screenshot, giving us the error:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#34;error&#34;:&#34;Invalid JSON&#34;}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14306,7 +14339,23 @@ You notice that there is both a “safegraph_brand_ids” field and a “brands�
 <p>Still we get an error saying the JSON is invalid.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;error&#39;: &#39;Invalid JSON&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14314,7 +14363,36 @@ You notice that there is both a “safegraph_brand_ids” field and a “brands�
 <p>Looks like it works!</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;data&#39;: {&#39;lookup&#39;: {&#39;placekey&#39;: &#39;224-222@5vg-7gv-d7q&#39;,
+                     &#39;safegraph_core&#39;: {&#39;category_tags&#39;: [&#39;Counter Service&#39;,
+                                                          &#39;Late Night&#39;,
+                                                          &#39;Lunch&#39;,
+                                                          &#39;Fast Food&#39;,
+                                                          &#39;Drive Through&#39;,
+                                                          &#39;Breakfast&#39;,
+                                                          &#39;Mexican Food&#39;,
+                                                          &#39;Dinner&#39;],
+                                        &#39;location_name&#39;: &#39;Taco Bell&#39;,
+                                        &#39;phone_number&#39;: &#39;+14159791587&#39;,
+                                        &#39;postal_code&#39;: &#39;94107&#39;,
+                                        &#39;street_address&#39;: &#39;710 3rd St&#39;}}},
+ &#39;extensions&#39;: {&#39;row_count&#39;: 1, &#39;version_date&#39;: &#39;1630442778__2021_08&#39;}}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14322,7 +14400,35 @@ You notice that there is both a “safegraph_brand_ids” field and a “brands�
 <p>The formatting is a little different, but the data itself looks correct!</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;category_tags&#39;: {0: [&#39;Counter Service&#39;,
+                       &#39;Late Night&#39;,
+                       &#39;Lunch&#39;,
+                       &#39;Fast Food&#39;,
+                       &#39;Drive Through&#39;,
+                       &#39;Breakfast&#39;,
+                       &#39;Mexican Food&#39;,
+                       &#39;Dinner&#39;]},
+ &#39;location_name&#39;: {0: &#39;Taco Bell&#39;},
+ &#39;phone_number&#39;: {0: &#39;+14159791587&#39;},
+ &#39;placekey&#39;: {0: &#39;224-222@5vg-7gv-d7q&#39;},
+ &#39;postal_code&#39;: {0: &#39;94107&#39;},
+ &#39;street_address&#39;: {0: &#39;710 3rd St&#39;}}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </div>
 </body>
